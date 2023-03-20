@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Inventory Managment Software V1
+  div(style='display: flex; flex-direction: column; gap: 15px; margin-bottom: 50px;')
+    a(href="/inventory/item/create", style='color: black; font-size: 20px;') Create a new item 
+    a(href="/inventory/category/create", style='color: black; font-size: 20px;') Create a new Category 
+  if categories != null
+  div(style='display: flex; flex-direction: column; gap: 15px;')
+    each category in categories
+      a(href=category.url, style='font-size: 2rem') #{category.name}
+      p= category.description

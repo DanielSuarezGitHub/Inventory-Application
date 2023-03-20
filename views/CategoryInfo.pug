@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= category.name
+  div(style='display: flex; flex-direction: column; gap: 20px;')
+    a(href="/inventory/") Go Home Click Here
+    a(href=`/inventory/category/${id}/update`) Update Category
+    a(href=`/inventory/category/${id}/delete`) Delete Category  
+  p= category.description
+  p Click on items to view quantity.
+  
+
+  h2 Items
+  ul
+    each item in item_list
+      li
+        a(href=item.url)= item.name
+        p $#{item.price}

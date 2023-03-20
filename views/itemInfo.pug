@@ -1,0 +1,11 @@
+extends layout
+
+
+block content
+  h1= name
+  div(style="display: flex; flex-direction: column; gap: 20px;")
+    a(href=`/inventory/item/${id}/update`) Update Item
+    a(href=`/inventory/item/${id}/delete`) Delete Item
+  p Current Stock: #{stock}
+  p Current Price: #{price}
+  a(href=category.url) Category: #{category.name}
